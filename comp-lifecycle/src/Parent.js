@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import Child from "./Child";
 
 class Parent extends Component {
-    state = {flag: true}
+    state = {flag: true, mountChild: true}
 
     write = (funcName, msg) => {
         console.log("Parent", funcName, msg);
@@ -19,7 +19,11 @@ class Parent extends Component {
             <h2 onClick={
                 () => this.setState({flag: !this.state.flag})
             }>Parent comp: {this.state.flag ? 'Yes': 'No'}</h2>
-            <Child text = 'some text'/>
+
+            <button onClick={
+                () => this.setState({mountChild: !this.state.mountChild})
+            }>Mount/Unmount Child</button>
+            {this.state.mountChild ? <Child text = 'some text'/> : ''}
         </div>);
     }
 
@@ -29,6 +33,10 @@ class Parent extends Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         this.write('componentDidUpdate', {prevProps, prevState, snapshot});
+    }
+
+    componentWillUnmount() {
+        this.write('componentWillUnmount');
     }
 }
 

@@ -24,6 +24,10 @@ class Child extends Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
         this.write('componentDidUpdate', {prevProps, prevState, snapshot});
     }
+
+    componentWillUnmount() {
+        this.write('componentWillUnmount');
+    }
 }
 
 export default Child;
