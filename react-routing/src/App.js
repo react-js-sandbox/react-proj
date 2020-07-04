@@ -4,6 +4,7 @@ import Home from "./Home";
 import {BrowserRouter, Link, Switch, Route} from 'react-router-dom';
 import Child1 from "./Child1";
 import Child2 from "./Child2";
+import NotFound from "./NotFound";
 
 class App extends Component {
     render() {
@@ -17,6 +18,7 @@ class App extends Component {
                         <Route exact path='/' component={Home}/>
                         <Route exact path='/Child1/:number' component={Child1}/>
                         <Route exact path='/Child2' component={Child2}/>
+                        <Route component={NotFound}/>
                     </Switch>
                 </div>
             </BrowserRouter>);
