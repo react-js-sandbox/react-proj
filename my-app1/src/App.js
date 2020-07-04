@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Person from "./Person";
+import Child from "./Child";
 
 class App extends Component {
     state = {msg : 'hello'};
@@ -8,7 +9,10 @@ class App extends Component {
     clickHandler = () => {
         console.log('Clicked');
         this.setState( {msg: this.state.msg == 'hello' ? 'world' : 'hello'});
-    }
+    };
+    myHandler = () => {
+        console.log("From myHandler");
+    };
 
     render() {
         return (
@@ -20,6 +24,8 @@ class App extends Component {
                 <button onClick={this.clickHandler}>Click me</button>
                 <h2>Message</h2>
                 <h3>{this.state.msg}</h3>
+                <hr/>
+                <Child someFunction={this.myHandler}></Child>
             </div>
         )
     }
