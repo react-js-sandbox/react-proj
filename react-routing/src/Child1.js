@@ -4,6 +4,7 @@ class Child1 extends Component {
     render() {
         return (<div>
             <h2>Child1</h2>
+            <p>{this.props.match.params.number}</p>
         </div>);
     }
 }

@@ -11,11 +11,11 @@ class App extends Component {
             <BrowserRouter>
                 <div className='App'>
                     <Link to='/'>Home</Link>
-                    <Link to='/Child1'>Child1</Link>
-                    <Link to='/Child2'>Child2</Link>
+                    <Link to='/Child1/3'>Child1</Link>
+                    <Link to='/Child2?arg1=5&arg2=7'>Child2</Link>
                     <Switch>
                         <Route exact path='/' component={Home}/>
-                        <Route exact path='/Child1' component={Child1}/>
+                        <Route exact path='/Child1/:number' component={Child1}/>
                         <Route exact path='/Child2' component={Child2}/>
                     </Switch>
                 </div>
