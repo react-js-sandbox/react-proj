@@ -15,6 +15,8 @@ class App extends Component {
     };
 
     render() {
+        const movies = [{name: 'Harry Potter', duration: 120}, {name: 'Harry Potter 2', duration: 130}];
+        let movieItems = movies.map(m => <div><p>{m.name}</p>{m.duration}</div>);
         return (
             <div className="App">
                 <h1>Persons:</h1>
@@ -25,7 +27,10 @@ class App extends Component {
                 <h2>Message</h2>
                 <h3>{this.state.msg}</h3>
                 <hr/>
-                <Child someFunction={this.myHandler}></Child>
+                <Child someFunction={this.myHandler}/>
+                <hr/>
+                {movieItems}
+
             </div>
         )
     }
