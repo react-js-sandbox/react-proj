@@ -1,25 +1,19 @@
 import React, {Component} from "react";
-import Child from "./Child";
 
-class Parent extends Component {
-    state = {flag: true}
-
-    write = (funcName, msg) => {
-        console.log("Parent", funcName, msg);
-    }
-
+class Child extends Component {
     constructor(props) {
         super(props);
         this.write("constructor");
     }
 
+    write = (funcName, msg) => {
+        console.log("Child", funcName, msg);
+    }
+
     render() {
         this.write("render");
         return (<div>
-            <h2 onClick={
-                () => this.setState({flag: !this.state.flag})
-            }>Parent comp: {this.state.flag ? 'Yes': 'No'}</h2>
-            <Child text = 'some text'/>
+            <p>{this.props.text}</p>
         </div>);
     }
 
@@ -32,4 +26,4 @@ class Parent extends Component {
     }
 }
 
-export default Parent;
+export default Child;
