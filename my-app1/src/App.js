@@ -16,7 +16,7 @@ class App extends Component {
 
     render() {
         const movies = [{name: 'Harry Potter', duration: 120}, {name: 'Harry Potter 2', duration: 130}];
-        let movieItems = movies.map(m => <div><p>{m.name}</p>{m.duration}</div>);
+        let movieItems = movies.map((m, index) => <div><p>{index+1}. {m.name}</p>{m.duration}</div>);
         return (
             <div className="App">
                 <h1>Persons:</h1>
