@@ -7,6 +7,7 @@ import Child2 from "./Child2";
 import NotFound from "./NotFound";
 import Child3 from "./Child3";
 import Child4 from "./Child4";
+import Child5 from "./Child5";
 
 class App extends Component {
     render() {
@@ -18,12 +19,14 @@ class App extends Component {
                     <Link to='/Child2?arg1=5&arg2=7'>Child2</Link>
                     <Link to='/Child3'>Child3</Link>
                     <Link to='/Child4'>Child4</Link>
+                    <Link to='/Child5'>Child5</Link>
                     <Switch>
                         <Route exact path='/' component={Home}/>
                         <Route exact path='/Child1/:number' component={Child1}/>
                         <Route exact path='/Child2' component={Child2}/>
                         <Route exact path='/Child3' component={Child3}/>
                         <Route exact path='/Child4' component={Child4}/>
+                        <Route exact path='/Child5' render = {()=> <Child5 name='Slim'/>}/>
                         <Route component={NotFound}/>
                     </Switch>
                 </div>
